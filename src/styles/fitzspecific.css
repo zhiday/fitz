@@ -3,6 +3,7 @@ header {
 	text-align: center;
 	position: fixed;
 	width: 100%;
+	user-select: none;
 }
 
 nav {
@@ -10,7 +11,10 @@ nav {
 	text-align: left;
 	top: 100%;
 	left: 0;
-	display: none;
+	width: 100%;
+	transform: scale(1, 0);
+	transform-origin: top;
+	transition: transform 400ms ease-in-out;
 }
 
 nav ul {
@@ -25,9 +29,15 @@ nav li {
 }
 
 nav a {
-	color: white;
+	color: var(--light-foreground);
 	text-decoration: none;
 	text-transform: uppercase;
+	opacity: 0;
+	transition: opacity 150ms ease-in-out, color 2s;
+}
+
+nav a:hover {
+	color: var(--accent-foreground);
 }
 
 .nav-toggle {
@@ -35,11 +45,15 @@ nav a {
 }
 
 .nav-toggle:checked ~ nav {
-	display: block;
+	transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+	opacity: 1;
+	transition: opacity 150ms ease-in-out 300ms;
 }
 
 .nav-toggle-label {
-	color: azure;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -49,33 +63,52 @@ nav a {
 	align-items: center;
 }
 
-.nav-toggle-label span {
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
 	display: block;
-	background: white;
+	background: var(--light-foreground);
 	height: 2px;
 	width: 2em;
 	border-radius: 2px;
+	position: relative;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span, 
+.nav-toggle:checked ~ .nav-toggle-label span::before,
+.nav-toggle:checked ~ .nav-toggle-label span::after {
+	background: var(--accent-foreground);
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+	content: '';
+	position: absolute;
+}
+
+.nav-toggle-label span::before {
+	top: 7px;
+}
+
+.nav-toggle-label span::after {
+	bottom: 7px;
 }
 
 .maingrid {
-	grid-template-columns: 50px auto 50px;
-	grid-template-areas: 
-		"nav		nav			nav   "
-		"header	header	header"
-		".      content .     "
-		"footer	footer	footer";
+	grid-template-columns: auto;
+	grid-template-areas:  "nav" "header" "content" "footer";
 }
 
 #home {
 	grid-area: home;
 }
 
-#band {
-	grid-area: band;
+#services {
+	grid-area: services;
 }
 
-#tour {
-	grid-area: tour;
+#about {
+	grid-area: about;
 }
 
 #contact {
@@ -83,7 +116,7 @@ nav a {
 }
 
 .contentgrid {
-	grid-template-areas: "home" "band" "tour" "contact";
+	grid-template-areas: "home" "services" "about" "contact";
 }
 
 #first {
@@ -99,9 +132,30 @@ nav a {
 }
 
 .bandgrid {
-	grid-template-areas: "first second thrid";
+	grid-template-areas: "first" "second" "thrid";
 }
 
 .modal {
 	display: none;
+}
+
+article {
+	width: 100%;
+}
+
+section {
+	margin: 10px;
+}
+
+.darken-image {
+	width: 100%;
+}
+
+.darken-image::after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: linear-gradient(red, blue);
 }

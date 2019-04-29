@@ -1,0 +1,41 @@
+
+@media only screen and (min-width: 800px) {
+
+	header {
+		display: grid;
+		grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr;
+	}
+
+	nav {
+		all: unset;
+		grid-column: 3 /4;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	nav ul {
+		display: flex;
+	}
+
+	nav li {
+		margin-left: 3em;
+		margin-bottom: 0;
+	}
+
+	nav a {
+		opacity: 1;
+	}
+
+	.logo {
+		grid-column: 2 / 3;
+	}
+
+	.nav-toggle-label {
+		display: none;
+	}
+	
+	.bandgrid {
+		grid-template-areas: "first second thrid";
+	}
+}

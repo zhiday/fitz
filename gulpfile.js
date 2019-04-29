@@ -1,16 +1,16 @@
 // Gulp.js configuration
 
 // Dependencies
-var gulp 				= require('gulp'), 
-		newer 			= require('gulp-newer'),
-		imagemin 		= require('gulp-imagemin'),
-		htmlclean 	= require('gulp-htmlclean'),
-		sass 				= require('gulp-sass'),
-		deporder 		= require('gulp-deporder'),
-		concat 			= require('gulp-concat'),
-		stripdebug 	= require('gulp-strip-debug'),
-		uglify 			= require('gulp-uglify'),
-		webserver		= require('gulp-webserver');
+var gulp 			= require('gulp'), 
+	newer 			= require('gulp-newer'),
+	imagemin 		= require('gulp-imagemin'),
+	htmlclean 		= require('gulp-htmlclean'),
+	sass 			= require('gulp-sass'),
+	deporder 		= require('gulp-deporder'),
+	concat 			= require('gulp-concat'),
+	stripdebug 		= require('gulp-strip-debug'),
+	uglify 			= require('gulp-uglify'),
+	webserver		= require('gulp-webserver');
 
 // Build variables
 var devBuild = (process.env.NODE_ENV !== 'production');

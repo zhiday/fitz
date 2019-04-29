@@ -5,26 +5,30 @@ body {
 
 body > header {
 	grid-area: header;
-	background: #CECECE;
+	background: var(--dark-background);
+	color: var(--light-foreground);
 }
 
 nav {
 	grid-area: nav;
-	background: #868686;
+	background: var(--dark-background);
+	color: var(--light-foreground);
 }
 
 footer {
 	grid-area: footer;
-	background: #868686;
+	background: var(--light-background);
+	color: var(--dark-foreground);
 }
 
 section {
-	background: #CECECE;
+	background: var(--light-background);
 }
 
 article {
 	grid-area: content;
-	background: #6688CB;
+	background: var(--dark-background);
+	color: var(--dark-foreground);
 }
 
 .grid {

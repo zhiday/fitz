@@ -1,0 +1,9 @@
+
+:root {
+    --dark-background: #1E1E1E;
+    --mid-background: #252526;
+    --light-background: #333333;
+    --dark-foreground: #C5C5C5;
+    --light-foreground: #FAFAFA;
+    --accent-foreground: #007ACC;
+}
