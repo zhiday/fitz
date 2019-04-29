@@ -1,0 +1,33 @@
+
+body {
+	margin: 0px;
+}
+
+body > header {
+	grid-area: header;
+	background: #CECECE;
+}
+
+nav {
+	grid-area: nav;
+	background: #868686;
+}
+
+footer {
+	grid-area: footer;
+	background: #868686;
+}
+
+section {
+	background: #CECECE;
+}
+
+article {
+	grid-area: content;
+	background: #6688CB;
+}
+
+.grid {
+	display: grid;
+	grid-template-rows: auto;
+}

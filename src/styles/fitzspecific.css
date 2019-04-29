@@ -1,0 +1,107 @@
+
+header {
+	text-align: center;
+	position: fixed;
+	width: 100%;
+}
+
+nav {
+	position: absolute;
+	text-align: left;
+	top: 100%;
+	left: 0;
+	display: none;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li {
+	margin-bottom: 1em;
+	margin-left: 1em;
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.nav-toggle {
+	display: none;
+}
+
+.nav-toggle:checked ~ nav {
+	display: block;
+}
+
+.nav-toggle-label {
+	color: azure;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 1em;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.nav-toggle-label span {
+	display: block;
+	background: white;
+	height: 2px;
+	width: 2em;
+	border-radius: 2px;
+}
+
+.maingrid {
+	grid-template-columns: 50px auto 50px;
+	grid-template-areas: 
+		"nav		nav			nav   "
+		"header	header	header"
+		".      content .     "
+		"footer	footer	footer";
+}
+
+#home {
+	grid-area: home;
+}
+
+#band {
+	grid-area: band;
+}
+
+#tour {
+	grid-area: tour;
+}
+
+#contact {
+	grid-area: contact;
+}
+
+.contentgrid {
+	grid-template-areas: "home" "band" "tour" "contact";
+}
+
+#first {
+	grid-area: first;
+}
+
+#second {
+	grid-area: second;
+}
+
+#thrid {
+	grid-area: thrid;
+}
+
+.bandgrid {
+	grid-template-areas: "first second thrid";
+}
+
+.modal {
+	display: none;
+}
